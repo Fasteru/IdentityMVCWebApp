@@ -1,0 +1,86 @@
+﻿@model Models.UserRegisterModel
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="/css/StyleSheet.css">
+</head>
+<body>
+
+    <div class="register-container">
+        <div> 
+            <h2>Register</h2>
+            <a asp-controller="UserAccess" asp-action="Login">LogIn</a>
+        </div>      
+        <form asp-controller="UserAccess" asp-action="Register" method="post">
+            <div class="form-field">
+                <div class="form-label">
+                    <label asp-for="UserName">User Name:</label>
+                </div> 
+                <div class="form-input">
+                    <div class="input-field">
+                        <input asp-for="UserName" value="@Model?.UserName" />
+                    </div>                   
+                    <div class="form-field-erro">
+                        <span asp-validation-for="UserName" class="text-red"></span>
+                    </div>                   
+                </div>               
+            </div>   
+            <div class="form-field">
+                <div class="form-label">
+                    <label asp-for="email">Email</label>
+                </div>
+                <div class="form-input">
+                    <div class="input-field">
+                        <input asp-for="email" value="@Model?.email" />
+                    </div>
+                    <div class="form-field-erro">
+                        <span asp-validation-for="email" class="text-red"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="form-label">
+                    <label asp-for="password">Password</label>
+                </div>
+                <div class="form-input">
+                    <div class="input-field">
+                        <input asp-for="password" value="@Model?.password" />
+                    </div>
+                    <div class="form-field-erro">
+                        <span asp-validation-for="password" class="text-red"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="form-label">
+                    <label asp-for="ConfirmPassword">Confirm Password</label>
+                </div>
+                <div class="form-input">
+                    <div class="input-field">
+                        <input asp-for="ConfirmPassword" value="@Model?.ConfirmPassword" />
+                    </div>
+                    <div class="form-field-erro">
+                        <span asp-validation-for="ConfirmPassword" class="text-red"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="form-label">
+                    <label asp-for="IsChecked">Keep Me Signed In</label>
+                </div>
+                <div class="form-input">
+                    <input asp-for="IsChecked" value="@Model?.IsChecked" />
+                </div>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js" integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
